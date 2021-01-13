@@ -6,10 +6,10 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH=arm64
 RUN \
     curl -J -L -o /tmp/fah.deb \
-        "https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.13_amd64.deb" \
+        "https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-arm64/v7.6/fahclient_7.6.21_arm64.deb" \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -48,8 +48,8 @@ LABEL \
     org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.url="https://addons.community" \
-    org.opencontainers.image.source="https://github.com/hassio-addons/addon-foldingathome" \
-    org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-foldingathome/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/andrewstech/addon-foldingathome" \
+    org.opencontainers.image.documentation="https://github.com/andrewstech/addon-foldingathome/blob/master/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
